@@ -66,23 +66,31 @@
   e.preventDefault();
         const wallet_address = document.querySelector('#wallet_address').value;
         const wallet_name = document.querySelector('#wallet_name').value;
+        const collectionid = document.querySelector('#collectionid').value;
         var valid = WAValidator.validate(wallet_address, wallet_name);
-        if(wallet_address == "" || wallet_name == ""){
+        if(wallet_address == "" || wallet_name == "" || collectionid == ""){
                 console.log("fields is empty")
             }else{
         if(valid){
             var walletform = new FormData();
             walletform.append("wallet_address",wallet_address);
             walletform.append("wallet_name",wallet_name);
-            fetch('/user/createcollection', {
+            walletform.append("collectionid",collectionid);
+            var headers = {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+}
+            fetch('/user/createwallet', {
         method: "POST",
-        body: walletform
+        body: walletform,
+        headers: headers,
       })
       .then(res => res.text())
       .then(data => console.log(data))
       .then(data => {
         if(data == "success"){
             console.log("wallet created");
+            wallet_address = "";
+            wallet_name == "";
         }
       }
         )

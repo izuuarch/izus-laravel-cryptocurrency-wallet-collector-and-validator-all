@@ -15,7 +15,7 @@ use App\Http\Controllers\Collectioncontroller;
 |
 */
 
-Route::get('/', function () {
+Route::get('/user', function () {
     return view('welcome');
 });
 
@@ -40,4 +40,6 @@ Route::prefix('user')->middleware('isloggin')->group(function(){
 
     // post routes for the collection
     Route::post('/createcollection', [Collectioncontroller::class,'createcollection']);
+    
+    Route::post('/createwallet', [Collectioncontroller::class,'createwallet']);
 });

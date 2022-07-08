@@ -8,6 +8,8 @@
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
     <!-- Title Page-->
     <title>Dashboard</title>
@@ -58,35 +60,15 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                             <li>
-                                    <a href="/wallet">Home</a>
+                                    <a href="/user/dashboard">Home</a>
                                 </li>
+
                             </ul>
                         </li>
                         <li>
-                            <a href="/wallet/settings">
-                                <i class="fas fa-gear"></i>Settings</a>
+                            <a href="/user/create">Create Colection</a>
                         </li>
-                        <li>
-                            <a href="/wallet/send">
-                        <i class="fas fa-chart-bar"></i>Send</a>
-                        </li>
-                        <li>
-                            <a href="/wallet/send">
-                                <i class="fas fa-chart-bar"></i>Receive</a>
-                        </li>
-                        <li>
-                                    <a href="wallet/settings">My Profile</a>
-                                </li>
-                                <li>
-                                    <a href="/wallet/settings">KYC</a>
-                                </li>
-                                <li>
-                                    <a href="/wallet/settings">My Profile</a>
-                                </li>
-                                <li>
-                            <a href="/wallet/support">
-                                <i class="fas fa-phone"></i>Support</a>
-                        </li>
+                       
       
                     </ul>
                 </div>
@@ -106,13 +88,17 @@
                                 <i class="fas fa-tachometer-alt"></i>Dashboard</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
-                                    <a href="/wallets">wallets</a>
+                                    <a href="/user/dashboard">wallets</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="/wallets">
-                                wallets</a>
+                            <a href="/user/dashboard">
+                                Home</a>
+                        </li>
+                        <li>
+                            <a href="/user/create">
+                                Create Collection</a>
                         </li>
              
 
